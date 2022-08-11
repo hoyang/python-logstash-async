@@ -93,7 +93,7 @@ class LogstashFormatter(logging.Formatter):
         message = {
             '@timestamp': self._format_timestamp(record.created),
             '@version': '1',
-            'host': self._host,
+            'host': {'name': self._host},
             'level': record.levelname,
             'logsource': self._logsource,
             'message': record.getMessage(),
